@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         binding.buttonTrue.setOnClickListener(view -> {
             checkAnswer(true);
             updateQuestion();
-
         });
         binding.buttonFalse.setOnClickListener(view -> {
             checkAnswer(false);
@@ -96,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 binding.questionTextview.setTextColor(Color.WHITE);
+                currentQuestionIndex = (currentQuestionIndex + 1) % questionList.size();
+                updateQuestion();
             }
 
             @Override
