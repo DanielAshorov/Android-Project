@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private int currentQuestionIndex = 0;
+    public String question;
+
     List <Question> questionList;
 
     @Override
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        question = binding.textViewOutOf.getText().toString();
 
 
         questionList = new Repository().getQuestions(questionArrayList -> {
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateCounter(ArrayList<Question> questionArrayList) {
-        binding.textViewOutOf.setText(String.format("Question: %d/%d", currentQuestionIndex, questionArrayList.size()));
+        binding.textViewOutOf.setText(String.format("%s %d/%d", question ,currentQuestionIndex, questionArrayList.size()));
     }
 
     private void fadeAnimation() {
