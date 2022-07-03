@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.25" />
+        <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_login.xml" value="0.15" />
         <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_opening.xml" value="0.15" />
         <entry key="..\:/Users/danni/AndroidStudioProjects/Trivia/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.22" />
         <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_login.xml" value="0.22" />
