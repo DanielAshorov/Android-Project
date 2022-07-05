@@ -18,7 +18,10 @@
     <string name="get_started_text">Get Started</string>
     <string name="sub_title_opening_temp">Trivia</string>
     <string name="title_text_opening_temp">Trivia</string>
-    <string name="short_password">Short password</string>
+    <string name="valid_password">Enter at least 6 characters</string>
     <string name="wait_login">Please wait while login...</string>
     <string name="wrong_details">\tWrong details\nPlease try again</string>
+    <string name="empty_fields">Empty fields are not allowed</string>
+    <string name="valid_email">Enter Valid E-mail address</string>
+    <string name="server_error">Server Error\nTry again</string>
 </resources>

@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText inputEmail, inputPassword;
     FirebaseAuth authentication;
     private ProgressDialog progressDialog;
-
+    private final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +61,20 @@ public class LoginActivity extends AppCompatActivity {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
 
-        if(password.isEmpty()|| password.length() < 6)
+        if(email.isEmpty()||password.isEmpty())
         {
-            String shortPassword = getString(R.string.short_password);
-            inputPassword.setError(shortPassword);
+            String emptyField = getString(R.string.empty_fields);
+            Toast.makeText(LoginActivity.this, emptyField,
+                    Toast.LENGTH_SHORT).show();
+        }
+        if(!email.matches(emailPattern))
+        {
+            String validEmail = getString(R.string.valid_email);
+            inputEmail.setError(validEmail);
+        }
+        else if(password.length() < 6) {
+            String validPassword = getString(R.string.valid_password);
+            inputPassword.setError(validPassword);
         }
         else
         {
@@ -83,9 +93,25 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        String wrongDetails = getString(R.string.wrong_details);
-                        Toast.makeText(LoginActivity.this, wrongDetails, Toast.LENGTH_SHORT).show();
-                        progressDialog.cancel();
+                        if(task.getException().getMessage().contains("password"))
+                        {
+                            String validPass = getString(R.string.valid_password);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, validPass, Toast.LENGTH_SHORT).show();
+
+                        }
+                        else if(task.getException().getMessage().contains("email"))
+                        {
+                            String validEmail = getString(R.string.valid_email);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, validEmail, Toast.LENGTH_SHORT).show();
+
+                        }
+                        else {
+                            String serverError = getString(R.string.server_error);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, serverError, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
