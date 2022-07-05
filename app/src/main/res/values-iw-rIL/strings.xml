@@ -25,6 +25,7 @@
     <string name="empty_fields">נא למלא את השדות הריקים</string>
     <string name="valid_email">הזינו כתובת מייל חוקית</string>
     <string name="server_error">בעיה בשרת\nנסה שנית</string>
-
+    <string name="correct_password">סיסמא שגויה</string>
+    <string name="correct_email_address">כתובת מייל שגויה</string>
 
 </resources>

@@ -24,4 +24,6 @@
     <string name="empty_fields">Empty fields are not allowed</string>
     <string name="valid_email">Enter Valid E-mail address</string>
     <string name="server_error">Server Error\nTry again</string>
+    <string name="correct_password">Wrong Password</string>
+    <string name="correct_email_address">Wrong Email</string>
 </resources>

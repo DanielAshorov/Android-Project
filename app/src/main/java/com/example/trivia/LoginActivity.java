@@ -95,16 +95,16 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         if(task.getException().getMessage().contains("password"))
                         {
-                            String validPass = getString(R.string.valid_password);
+                            String correctPassword = getString(R.string.correct_password);
                             progressDialog.cancel();
-                            Toast.makeText(LoginActivity.this, validPass, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, correctPassword, Toast.LENGTH_SHORT).show();
 
                         }
-                        else if(task.getException().getMessage().contains("email"))
+                        else if(task.getException().getMessage().contains("user"))
                         {
-                            String validEmail = getString(R.string.valid_email);
+                            String correctEmail = getString(R.string.correct_email_address);
                             progressDialog.cancel();
-                            Toast.makeText(LoginActivity.this, validEmail, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, correctEmail, Toast.LENGTH_SHORT).show();
 
                         }
                         else {
