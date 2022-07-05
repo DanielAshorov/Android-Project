@@ -83,7 +83,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(LoginActivity.this, "\tWrong details\nPlease try again", Toast.LENGTH_SHORT).show();
+                        String wrongDetails = getString(R.string.wrong_details);
+                        Toast.makeText(LoginActivity.this, wrongDetails, Toast.LENGTH_SHORT).show();
+                        progressDialog.cancel();
                     }
                 }
             });
