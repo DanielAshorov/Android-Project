@@ -3,6 +3,7 @@ package com.example.trivia;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -20,6 +22,7 @@ import com.example.trivia.data.AnswerListAsyncResponse;
 import com.example.trivia.data.Repository;
 import com.example.trivia.databinding.ActivityMainBinding;
 import com.example.trivia.model.Question;
+import com.example.trivia.model.UserDetails;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private int currentQuestionIndex = 0;
     public String question;
+    public UserDetails userInfo;
 
     List <Question> questionList;
 
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         question = binding.textViewOutOf.getText().toString();
 
@@ -48,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                     updateCounter(questionArrayList);
                 }
             );
+
+
+        userInfo = (UserDetails) getIntent().getSerializableExtra("userDetails");
 
         binding.buttonNext.setOnClickListener(view -> {
             currentQuestionIndex = (currentQuestionIndex + 1) % questionList.size();

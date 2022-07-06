@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.trivia.helpers.UserHelper;
+import com.example.trivia.model.UserDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,6 +26,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -93,13 +96,18 @@ public class CreateAccountActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
-                        startActivity(new Intent(CreateAccountActivity.this, MainActivity.class));
+                        UserHelper userHelper = new UserHelper();
+                        userHelper.setUserFirstTime(username, email);
+                        UserDetails data = new UserDetails(1,1,1,1,1,0,username);
+                        Intent main = new Intent(CreateAccountActivity.this,  MainActivity.class);
+                        main.putExtra("userDetails", data);
+                        startActivity(main);
                         progressBar.setVisibility(View.INVISIBLE);
                     }
                     else{
-                        String unvalidRegistration = getString(R.string.server_error);
+                        String invalidRegistration = getString(R.string.server_error);
                         progressBar.setVisibility(View.INVISIBLE);
-                        Toast.makeText(CreateAccountActivity.this, unvalidRegistration, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CreateAccountActivity.this, invalidRegistration, Toast.LENGTH_SHORT).show();
                     }
                 }
             });

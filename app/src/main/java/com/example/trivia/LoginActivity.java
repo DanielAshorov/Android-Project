@@ -12,12 +12,18 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.trivia.helpers.UserHelper;
+import com.example.trivia.model.UserDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.internal.InternalTokenProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -88,8 +94,20 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        progressDialog.cancel();
+                        final UserDetails[] data = new UserDetails[1];
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Users").document(email).get().
+                                addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                        data[0] = documentSnapshot.toObject(UserDetails.class);
+
+                                        progressDialog.cancel();
+                                        Intent main = new Intent(LoginActivity.this,  MainActivity.class);
+                                        main.putExtra("userDetails", data[0]);
+                                        startActivity(main);
+                                    }
+                                });
                     }
                     else
                     {
