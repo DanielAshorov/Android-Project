@@ -19,7 +19,13 @@
     <string name="get_started_text">בואו נתחיל</string>
     <string name="sub_title_opening_temp">טריוויה</string>
     <string name="title_text_opening_temp">טריוויה</string>
-    <string name="short_password">סיסמא קצרה מדי</string>
+    <string name="valid_password">סיסמא צריכה להכיל 6 תווים לפחות</string>
     <string name="wait_login">כבר מתחברים..</string>
     <string name="wrong_details">פרטים שגויים\nנסו שנית..</string>
+    <string name="empty_fields">נא למלא את השדות הריקים</string>
+    <string name="valid_email">הזינו כתובת מייל חוקית</string>
+    <string name="server_error">בעיה בשרת\nנסה שנית</string>
+    <string name="correct_password">סיסמא שגויה</string>
+    <string name="correct_email_address">כתובת מייל שגויה</string>
+
 </resources>

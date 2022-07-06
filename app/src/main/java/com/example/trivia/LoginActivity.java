@@ -12,12 +12,18 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.trivia.helpers.UserHelper;
+import com.example.trivia.model.UserDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.internal.InternalTokenProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText inputEmail, inputPassword;
     FirebaseAuth authentication;
     private ProgressDialog progressDialog;
-
+    private final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +67,20 @@ public class LoginActivity extends AppCompatActivity {
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
 
-        if(password.isEmpty()|| password.length() < 6)
+        if(email.isEmpty()||password.isEmpty())
         {
-            String shortPassword = getString(R.string.short_password);
-            inputPassword.setError(shortPassword);
+            String emptyField = getString(R.string.empty_fields);
+            Toast.makeText(LoginActivity.this, emptyField,
+                    Toast.LENGTH_SHORT).show();
+        }
+        if(!email.matches(emailPattern))
+        {
+            String validEmail = getString(R.string.valid_email);
+            inputEmail.setError(validEmail);
+        }
+        else if(password.length() < 6) {
+            String validPassword = getString(R.string.valid_password);
+            inputPassword.setError(validPassword);
         }
         else
         {
@@ -78,14 +94,42 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful())
                     {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        progressDialog.cancel();
+                        final UserDetails[] data = new UserDetails[1];
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Users").document(email).get().
+                                addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                        data[0] = documentSnapshot.toObject(UserDetails.class);
+
+                                        progressDialog.cancel();
+                                        Intent main = new Intent(LoginActivity.this,  MainActivity.class);
+                                        main.putExtra("userDetails", data[0]);
+                                        startActivity(main);
+                                    }
+                                });
                     }
                     else
                     {
-                        String wrongDetails = getString(R.string.wrong_details);
-                        Toast.makeText(LoginActivity.this, wrongDetails, Toast.LENGTH_SHORT).show();
-                        progressDialog.cancel();
+                        if(task.getException().getMessage().contains("password"))
+                        {
+                            String correctPassword = getString(R.string.correct_password);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, correctPassword, Toast.LENGTH_SHORT).show();
+
+                        }
+                        else if(task.getException().getMessage().contains("user"))
+                        {
+                            String correctEmail = getString(R.string.correct_email_address);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, correctEmail, Toast.LENGTH_SHORT).show();
+
+                        }
+                        else {
+                            String serverError = getString(R.string.server_error);
+                            progressDialog.cancel();
+                            Toast.makeText(LoginActivity.this, serverError, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });

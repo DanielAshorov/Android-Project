@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1008135642775",
+    "firebase_url": "https://trivia-c4d69-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "trivia-c4d69",
     "storage_bucket": "trivia-c4d69.appspot.com"
   },
