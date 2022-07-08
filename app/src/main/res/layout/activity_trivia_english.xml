@@ -5,5 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".trivia_english">
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Sport_English"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="16dp" />
 
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Movies_English"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Music_English"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Animals_English"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="530dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="230"
+        android:layout_height="140"
+        app:srcCompat="@drawable/Food_English"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="701dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
