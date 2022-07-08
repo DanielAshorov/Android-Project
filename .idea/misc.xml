@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_login.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_post_trivia.xml" value="0.3009833262077811" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_post_trivia_English.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_start_to_play.xml" value="0.27049180327868855" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_trivia_english.xml" value="0.22" />
         <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.25" />
         <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_login.xml" value="0.15" />
         <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_main.xml" value="0.5" />

@@ -6,4 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".CatagoryTriviaActivity">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/sport"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Movies"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Music"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="356dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/Animals"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="530dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="230"
+        android:layout_height="140"
+        app:srcCompat="@drawable/Food"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="701dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
