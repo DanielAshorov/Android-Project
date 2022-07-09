@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#141A33"
+    android:background="#1A4A46"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="18dp"
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_slab_bold"
-        android:text="@string/title_text_opening_temp"
+        android:text="@string/title_text_opening"
         android:textColor="@color/light_gray_txt_color"
         android:textSize="30sp" />
 
@@ -29,7 +29,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            app:cardBackgroundColor="@color/opening_card_color"
+            app:cardBackgroundColor="#1A5A54"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
             app:cardUseCompatPadding="true">
@@ -39,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/sub_title_opening_temp"
+                android:text="@string/sub_title_opening"
+                android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="19sp" />
         </androidx.cardview.widget.CardView>

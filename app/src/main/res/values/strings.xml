@@ -5,7 +5,6 @@
     <string name="true_button">TRUE</string>
     <string name="false_button">FALSE</string>
     <string name="next_button">NEXT</string>
-    <string name="placeholder">hello world, we will add the actual text to be shown</string>
     <string name="correct_answer">Correct</string>
     <string name="incorrect">Incorrect</string>
     <string name="email_hint">Email</string>
@@ -16,8 +15,6 @@
     <string name="username_hint">Username</string>
     <string name="or_text_">OR</string>
     <string name="get_started_text">Get Started</string>
-    <string name="sub_title_opening_temp">Trivia</string>
-    <string name="title_text_opening_temp">Trivia</string>
     <string name="valid_password">Enter at least 6 characters</string>
     <string name="wait_login">Please wait while login...</string>
     <string name="wrong_details">\tWrong details\nPlease try again</string>
@@ -26,4 +23,7 @@
     <string name="server_error">Server Error\nTry again</string>
     <string name="correct_password">Wrong Password</string>
     <string name="correct_email_address">Wrong Email</string>
+    <string name="title_text_opening">Think. Play. Win</string>
+    <string name="sub_title_opening">A trivia game with knowledge enrichment</string>
+    <string name="score_text2">Current Score: </string>
 </resources>

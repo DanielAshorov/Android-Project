@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:background="#141A33"
-    android:padding="16dp"
     android:layout_height="match_parent"
+    android:background="#1A4A46"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".LoginActivity">
 
 
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:id="@+id/email_login_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
     <AutoCompleteTextView
         android:id="@+id/email"
@@ -47,11 +46,11 @@
 
     <Button
         android:id="@+id/email_sign_in_button"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:text="@string/login_text"
-        style="@style/ButtonStyle"
         android:textStyle="bold" />
 
     <TextView
@@ -66,13 +65,12 @@
 
     <Button
         android:id="@+id/create_acct_button_login"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:text="@string/create_text"
-        style="@style/ButtonStyle"
         android:textStyle="bold" />
-
 
 
 </LinearLayout>
