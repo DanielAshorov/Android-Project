@@ -22,11 +22,14 @@ import com.example.trivia.data.AnswerListAsyncResponse;
 import com.example.trivia.data.Repository;
 import com.example.trivia.databinding.ActivityMainBinding;
 import com.example.trivia.model.Question;
+import com.example.trivia.model.Score;
 import com.example.trivia.model.UserDetails;
+import com.example.trivia.util.Prefs;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private int currentQuestionIndex = 0;
     public String question;
     public UserDetails userInfo;
+    private int scoreCounter = 0;
+    private Score score;
+    private Prefs prefs;
 
     List <Question> questionList;
 
@@ -46,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        score = new Score();
+        prefs = new Prefs(MainActivity.this);
+
+        binding.highestScoreText.setText(MessageFormat.format("Highest Score: {0}", String.valueOf(prefs.getHighestScore())));
+
+        binding.scoreText2.setText(MessageFormat.format("Current Score: {0}", String.valueOf(score.getScore())));
         question = binding.textViewOutOf.getText().toString();
 
 
@@ -80,9 +92,11 @@ public class MainActivity extends AppCompatActivity {
         if (userChoseCorrect == answer) {
             snackMessageId = R.string.correct_answer;
             fadeAnimation();
+            addPoints();
         } else {
             snackMessageId = R.string.incorrect;
             shakeAnimation();
+            deductPoints();
         }
         Snackbar.make(binding.cardView, snackMessageId, Snackbar.LENGTH_SHORT).show();
     }
@@ -148,6 +162,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void deductPoints() {
+        if (scoreCounter > 0) {
+            scoreCounter = scoreCounter - 5;
+            score.setScore(scoreCounter);
+            binding.scoreText2.setText(MessageFormat.format("Current Score: {0}", String.valueOf(score.getScore())));
+        } else {
+            scoreCounter = 0;
+            score.setScore(scoreCounter);
+        }
+    }
+
+    private void addPoints() {
+        scoreCounter = scoreCounter + 10;
+        score.setScore(scoreCounter);
+        binding.scoreText2.setText(String.valueOf(score.getScore()));
+        binding.scoreText2.setText(MessageFormat.format("Current Score: {0}", String.valueOf(score.getScore())));
+    }
+
+    @Override
+    protected void onPause() {
+        prefs.saveHighestScore(score.getScore());
+        super.onPause();
+    }
 }
 
 

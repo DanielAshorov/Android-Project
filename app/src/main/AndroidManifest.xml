@@ -20,10 +20,6 @@
             android:name=".trivia_english"
             android:exported="false" />
 
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/trivia_english" />
-
         <activity
             android:name=".StartToPlayActivity"
             android:exported="false" />
