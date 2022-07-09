@@ -17,8 +17,18 @@
         android:theme="@style/Theme.Trivia"
         tools:targetApi="31">
         <activity
+            android:name=".RecordsEnglishActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecordsActivity"
+            android:exported="false" />
+        <activity
             android:name=".trivia_english"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/trivia_english" />
 
         <activity
             android:name=".StartToPlayActivity"

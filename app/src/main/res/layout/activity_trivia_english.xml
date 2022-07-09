@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:srcCompat="@drawable/movies"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
         app:srcCompat="@drawable/music"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:srcCompat="@drawable/animals"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -62,5 +62,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11"
         app:srcCompat="@drawable/food"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

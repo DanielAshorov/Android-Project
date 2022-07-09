@@ -3,15 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_login.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_main.xml" value="0.14722222222222223" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_opening.xml" value="0.3509963768115942" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_post_trivia.xml" value="0.3009833262077811" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_post_trivia_English.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_records.xml" value="0.3509963768115942" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_records_english.xml" value="0.25" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_start_to_play.xml" value="0.27049180327868855" />
+        <entry key="..\:/Android/Trivia_Project/Trivia/app/src/main/res/layout/activity_trivia_english.xml" value="0.22" />
         <entry key="..\:/Users/Damarkov/Desktop/AndroidCourse/Project/Trivia/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/danni/AndroidStudioProjects/Trivia/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_create_account.xml" value="0.22" />
         <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_opening.xml" value="0.1" />
-        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_post_trivia.xml" value="0.12" />
-        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_start_to_play.xml" value="0.14130434782608695" />
-        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_trivia_english.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/danni/Documents/Android project - Trivia game/Trivia/app/src/main/res/layout/activity_opening.xml" value="0.14130434782608695" />
       </map>
     </option>
   </component>
