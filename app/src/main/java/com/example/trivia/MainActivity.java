@@ -50,10 +50,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         score = new Score();
         prefs = new Prefs(MainActivity.this);
+
+        //Retrieve the last state
+        currentQuestionIndex = prefs.getState();
 
         binding.highestScoreText.setText(MessageFormat.format("Highest Score: {0}", String.valueOf(prefs.getHighestScore())));
 
@@ -150,8 +152,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 binding.questionTextview.setTextColor(Color.WHITE);
-
-
             }
 
             @Override
@@ -183,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         prefs.saveHighestScore(score.getScore());
+        prefs.setState(currentQuestionIndex);
         super.onPause();
     }
 }
